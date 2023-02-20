@@ -10,27 +10,36 @@ function CreateLink(file) {
 };
 
 $(document).ready(function() {
-	console.log("测试测试");
 	$.getJSON("static/json/data.json",function(data){
-		console.log(data);
+		//console.log(data);
+		var ulTag = $(".mylist ");
 		$.each(data,function(infoIndex,info){
-			strHtml += "姓名："+info["name"]+"<br>"; 
-			strHtml += "性别："+info["sex"]+"<br>"; 
-			strHtml += "邮箱："+info["email"]+"<br>"; 
-			strHtml += "<hr>" 
+			var strHtml = "";
+			for (var i=0;i<ulTag.length;i++){
+				var attr = ulTag.eq(i).attr('title');
+				//console.log(attr);
+				if (attr == info["name"]){
+					var str = info["data"];
+					if (str == undefined ) {
+						ulTag.eq(i).after("");
+						break;
+					};
+					for (var j=0;j<str.length;j++){
+						strHtml = strHtml + '<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="'+ str[j]["url"]+'" target="_blank">'
+						strHtml = strHtml + '<img class="icon" src="https://api.xinac.net/icon/?url='+str[j]["url"]+'"/>';
+						strHtml = strHtml + '<span>'+str[j]["name"]+'</span></a></li>';
+					};
+					ulTag.eq(i).children('li:not(:first)' ).remove();
+					console.log(strHtml);
+					// console.log(ulTag.eq(i).html());
+					ulTag.eq(i).append(strHtml);
+					break;
+				};
+			};
 		});
+		$(".container").trigger("create"); 
 	});
-	$.ajax({
-	     type: "get",
-	     url: "static/json/data.json",
-	     dataType: "json",
-	     async: false,
-	     success: function(data) {
-	          console.log(data.total);
-	     }
-	});
-
-
+	
 });
 
 
