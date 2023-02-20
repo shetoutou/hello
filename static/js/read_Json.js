@@ -12,7 +12,7 @@ function CreateLink(file) {
 $(document).ready(function() {
 	console.log("测试测试");
 	$.getJSON("static/json/data.json",function(data){
-		console.log(data.total);
+		console.log(data);
 		$.each(data,function(infoIndex,info){
 			strHtml += "姓名："+info["name"]+"<br>"; 
 			strHtml += "性别："+info["sex"]+"<br>"; 
