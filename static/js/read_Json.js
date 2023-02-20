@@ -20,10 +20,6 @@ $(document).ready(function() {
 				//console.log(attr);
 				if (attr == info["name"]){
 					var str = info["data"];
-					if (str == undefined ) {
-						ulTag.eq(i).after("");
-						break;
-					};
 					for (var j=0;j<str.length;j++){
 						strHtml = strHtml + '<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="'+ str[j]["url"]+'" target="_blank">'
 						strHtml = strHtml + '<img class="icon" src="https://api.xinac.net/icon/?url='+str[j]["url"]+'"/>';
