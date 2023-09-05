@@ -24,6 +24,9 @@
 	}, {
 		"name": "高校资源",
 		"url": "https://www.gaoxiaoac.com/"
+	}, {
+		"name": "IPA商店",
+		"url": "https://ipa.store/"
 	}]
 }, {
 	"name": "视频媒体",
@@ -48,7 +51,10 @@
 	}, {
 		"name": "星球地址",
 		"url": "https://www.dmdyy.cc/"
-	}]
+	},{
+        "name":"看片狂人",
+        "url":"https://whereiskpkuang.com/"
+    }]
 }, {
 	"name": "在线工具",
 	"data": [{
