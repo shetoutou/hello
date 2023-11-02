@@ -4,8 +4,8 @@
 		"name": "不死鸟",
 		"url": "https://iao.su/"
 	}, {
-		"name": "火箭TNT",
-		"url": "https://www.hjtnt.pro/"
+		"name": "IPTV",
+		"url": "https://iptvindex.com/"
 	}, {
 		"name": "Jay",
 		"url": "https://www.likejay.cn/"
@@ -27,6 +27,9 @@
 	}, {
 		"name": "IPA商店",
 		"url": "https://ipa.store/"
+	}, {
+		"name": "翻翻导航",
+		"url": "https://www.ffq.la/"
 	}]
 }, {
 	"name": "视频媒体",
@@ -51,6 +54,9 @@
 	},{
         "name":"看片狂人",
         "url":"https://whereiskpkuang.com/"
+    },{
+        "name":"555电影",
+        "url":"https://555dy.org/"
     }]
 }, {
 	"name": "在线工具",
@@ -75,6 +81,9 @@
 	}, {
 		"name": "油猴插件",
 		"url": "https://greasyfork.org/zh-CN"
+	}, {
+		"name": "文件转换",
+		"url": "https://convertio.co/zh/"
 	}]
 }, {
 	"name": "开发论坛",
