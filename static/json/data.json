@@ -20,7 +20,7 @@
 		"url": "https://nav.6soluo.com/"
 	}, {
 		"name": "包子漫画",
-		"url": "https://baozimh.org/"
+		"url": "https://nav.telltome.net/"
 	}, {
 		"name": "高校资源",
 		"url": "https://www.gaoxiaoac.com/"
@@ -57,6 +57,9 @@
     },{
         "name":"555电影",
         "url":"https://555dy.org/"
+    },{
+        "name":"电影先生",
+        "url":"https://xindizhi.github.io/dyxs/"
     }]
 }, {
 	"name": "在线工具",
