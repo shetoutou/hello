@@ -46,52 +46,52 @@
 		"name": "搜片",
 		"url": "https://soupian.pro/"
 	}, {
-		"name": "58影视",
-		"url": "https://www.dhluru.com/"
+		"name": "稀饭影视",
+		"url": "https://www.xifanys.com/"
 	}, {
 		"name": "茶杯狐",
 		"url": "https://cupfox.app/"
 	}, {
-		"name": "大米星球",
-		"url": "https://www.dmdyy.cc/"
+		"name": "音乐下载",
+		"url": "https://tool.liumingye.cn/music/#/"
 	},{
-        "name":"看片狂人",
-        "url":"https://whereiskpkuang.com/"
-    },{
-        "name":"555电影",
-        "url":"https://555dy.org/"
-    },{
-        "name":"电影先生",
-        "url":"https://xindizhi.github.io/dyxs/"
-    }]
-}, {
-	"name": "在线工具",
-	"data": [{
-		"name": "Miku工具",
-		"url": "https://tools.miku.ac/"
+        	"name":"看片狂人",
+        	"url":"https://whereiskpkuang.com/"
+    	},{
+	        "name":"555电影",
+	        "url":"https://555dy.org/"
+    	},{
+	        "name":"荐片",
+	        "url":"https://www.jianpianpc.com/"
+    	}]
 	}, {
-		"name": "蚂蚁工具",
-		"url": "https://www.antools.net/"
+		"name": "在线工具",
+		"data": [{
+			"name": "Miku工具",
+			"url": "https://tools.miku.ac/"
+		}, {
+			"name": "蚂蚁工具",
+			"url": "https://www.antools.net/"
+		}, {
+			"name": "兔二工具",
+			"url": "https://www.amp360.net/"
+		}, {
+			"name": "JSON在线",
+			"url": "https://www.sojson.com/"
+		}, {
+			"name": "IP定位",
+			"url": "https://www.ipuu.net/Home"
+		}, {
+			"name": "Quicker",
+			"url": "https://getquicker.net/"
+		}, {
+			"name": "油猴插件",
+			"url": "https://greasyfork.org/zh-CN"
+		}, {
+			"name": "文件转换",
+			"url": "https://convertio.co/zh/"
+		}]
 	}, {
-		"name": "兔二工具",
-		"url": "https://www.amp360.net/"
-	}, {
-		"name": "JSON在线",
-		"url": "https://www.sojson.com/"
-	}, {
-		"name": "IP定位",
-		"url": "https://www.ipuu.net/Home"
-	}, {
-		"name": "Quicker",
-		"url": "https://getquicker.net/"
-	}, {
-		"name": "油猴插件",
-		"url": "https://greasyfork.org/zh-CN"
-	}, {
-		"name": "文件转换",
-		"url": "https://convertio.co/zh/"
-	}]
-}, {
 	"name": "开发论坛",
 	"data": [{
 		"name": "Gitee",
