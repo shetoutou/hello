@@ -119,7 +119,7 @@
 		"url": "https://vercel.com/"
 	}, {
 		"name": "GitHub",
-		"url": "https://gitee.com/"
+		"url": "https://github.com/"
 	}]
 }, {
 	"name": "社交邮箱",
@@ -159,9 +159,6 @@
 	}, {
 		"name": "staticfile",
 		"url": "http://www.staticfile.org/"
-	}, {
-		"name": "75CDN",
-		"url": "https://cdn.baomitu.com/"
 	}, {
 		"name": "安兔壁纸",
 		"url": "https://antools.net/"
