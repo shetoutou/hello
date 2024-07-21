@@ -111,6 +111,15 @@
 	}, {
 		"name": "吾爱尚玩",
 		"url": "http://www.523play.com/"
+	}, {
+		"name": "Cloudflare",
+		"url": "https://pages.cloudflare.com/"
+	}, {
+		"name": "Vercel",
+		"url": "https://vercel.com/"
+	}, {
+		"name": "GitHub",
+		"url": "https://gitee.com/"
 	}]
 }, {
 	"name": "社交邮箱",
