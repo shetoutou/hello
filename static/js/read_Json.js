@@ -26,7 +26,7 @@ $(document).ready(function() {
 						strHtml = strHtml + '<span>'+str[j]["name"]+'</span></a></li>';
 					};
 					ulTag.eq(i).children('li:not(:first)' ).remove();
-					console.log(strHtml);
+					//console.log(strHtml);
 					// console.log(ulTag.eq(i).html());
 					ulTag.eq(i).append(strHtml);
 					break;
