@@ -24,63 +24,11 @@
 		<link rel="stylesheet" id="font-awesome-css" href="static\css\all.min.css" type="text/css" media="all">
 		<script src="static\js\jquery.min.js"></script>
 		<script src="static\js\font_1230786_ewprpwrczvj.js"></script>
-		<script rel="stylesheet">
-			//关键词sug
-			$(function() {
-				//当键盘键被松开时发送Ajax获取数据
-				$('#search-text').keyup(function() {
-					var keywords = $(this).val();
-					if (keywords == '') {
-						$('#word').hide();
-						return
-					};
-					$.ajax({
-						url: 'https://suggestion.baidu.com/su?wd=' + keywords,
-						dataType: 'jsonp',
-						jsonp: 'cb', //回调函数的参数名(键值)key
-						// jsonpCallback: 'fun', //回调函数名(值) value
-						beforeSend: function() {
-							// $('#word').append('<li>正在加载。。。</li>');
-						},
-						success: function(data) {
-							$('#word').empty().show();
-							if (data.s == '') {
-								//$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
-								$('#word').empty();
-								$('#word').hide();
-							}
-							$.each(data.s, function() {
-								$('#word').append('<li>' + this + '</li>');
-							})
-						},
-						error: function() {
-							$('#word').empty().show();
-							//$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
-							$('#word').hide();
-						}
-					})
-				})
-				//点击搜索数据复制给搜索框
-				$(document).on('click', '#word li', function() {
-					var word = $(this).text();
-					$('#search-text').val(word);
-					$('#word').hide();
-					//$("form").submit();
-					$('#word').empty();
-					$('.submit').trigger('click'); //触发搜索事件
-			 })
-			 $(document).on('click', '.container,.banner-video,nav', function() {
-					$('#word').empty();
-					$('#word').hide();
-				})
-
-			})
-		</script>
-		<script rel="stylesheet">
-			$(function() {
-
-			})
-		</script>
+		<!-- 引入搜索 -->
+		<script rel="stylesheet" src="static\js\sou.js"></script>
+		<!-- 引入自动样式 -->
+		<script rel="stylesheet" src="static\js\auto_style.js"></script>
+		
 		<link rel='stylesheet' href='static\css\style.css'>
 	</head>
 
@@ -95,36 +43,18 @@
 			<!--静态背景-->
 			<!-- <img src="https://static.monknow.com/newtab/wallpaper/aecb5aa03a9271ab83d22555dc3499c4.jpg" alt="">  -->
 			<!--随机壁纸图片版本 && https://api.ixiaowai.cn/gqapi/gqapi.php && 更多api详见 https://blog.csdn.net/SectSnow/article/details/115835711 -->
-			<img src="https://api.isoyu.com/bing_images.php" alt="">
+			<img onload="" src="" onerror="dailybing(this)" alt="">
 			<div class="bottom-cover" style="background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(244 248 251 / 0.6) 50%, rgb(244 248 251) 100%);">
 			</div>
 		</div>
 		<!--topbar开始-->
 		<style>
-			.navbar-toggler svg {
-				width: 24px;
-				height: 24px;
-			}
-
-			.navbar-toggler .bi-list-nested {
-				display: none;
-			}
-
-			.navbar-toggler.collapsed .bi-list-nested {
-				display: block;
-			}
-
-			.navbar-toggler.collapsed .bi-x {
-				display: none;
-			}
-
-			.navbar-toggler .bi-x {
-				display: block;
-			}
-
-			.class-hidden {
-				display: none;
-			}
+			.navbar-toggler svg {width: 24px;height: 24px;}
+			.navbar-toggler .bi-list-nested {display: none;}
+			.navbar-toggler.collapsed .bi-list-nested {display: block;}
+			.navbar-toggler.collapsed .bi-x {display: none;
+			.navbar-toggler .bi-x {display: block;}
+			.class-hidden {display: none;}
 		</style>
 		<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="position: absolute; z-index: 10000;">
 			<a class="navbar-brand" href="#">
@@ -175,31 +105,16 @@
 					}
 				</style>
 				<div id="he-plugin-simple"></div>
-				<script>
+				<!-- <script>
 					WIDGET = {
-						CONFIG: {
-							"modules": "01234",
-							"background": 5,
-							"tmpColor": "4A4A4A",
-							"tmpSize": 14,
-							"cityColor": "4A4A4A",
-							"citySize": 14,
-							"aqiSize": 14,
-							"weatherIconSize": 22,
-							"alertIconSize": 16,
-							"padding": "8px 8px 8px 8px",
-							"shadow": "1",
-							"language": "auto",
-							"borderRadius": 5,
-							"fixed": "false",
-							"vertical": "middle",
-							"horizontal": "center",
-							"key": "acd0fdcab4b9481a98d0f59145420fac"
+						CONFIG: {"modules": "01234","background": 5,"tmpColor": "4A4A4A","tmpSize": 14,"cityColor": "4A4A4A","citySize": 14,
+							"aqiSize": 14,"weatherIconSize": 22,"alertIconSize": 16,"padding": "8px 8px 8px 8px","shadow": "1","language": "auto",
+							 "borderRadius": 5,"fixed": "false","vertical": "middle","horizontal": "center","key": "acd0fdcab4b9481a98d0f59145420fac"
 						}
 					}
 				</script>
 				<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js"></script>
-				<!-- 天气情况插件-end -->
+				天气情况插件-end -->
 			</div>
 		</nav>
 		<!--topbar结束-->
