@@ -9,6 +9,15 @@ function CreateLink(file) {
 	void(head.appendChild(new_element));
 };
 
+//加载失败随机获取内置icon
+function geticon(th) {
+	//获取（1,3)随机数
+	var num = Math.floor(Math.random()*(3-1+1))+1;
+	var url = "static/img/noico_"+num+".png"
+	th.src = url;
+	//console.log(th+"错误的icon执行了备用icon"+url);
+};
+
 $(document).ready(function() {
 	$.getJSON("static/json/data.json",function(data){
 		//console.log(data);
@@ -22,7 +31,7 @@ $(document).ready(function() {
 					var str = info["data"];
 					for (var j=0;j<str.length;j++){
 						strHtml = strHtml + '<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="'+ str[j]["url"]+'" target="_blank">'
-						strHtml = strHtml + '<img class="icon" src="https://www.favicon.vip/get.php?url='+str[j]["url"]+'"/>';
+						strHtml = strHtml + '<img class="icon" src="https://www.favicon.vip/get.php?url='+str[j]["url"]+'" onerror="geticon(this)" />';
 						strHtml = strHtml + '<span>'+str[j]["name"]+'</span></a></li>';
 					};
 					ulTag.eq(i).children('li:not(:first)' ).remove();
