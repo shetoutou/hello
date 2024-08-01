@@ -56,7 +56,7 @@ function geticon(th) {
 };
 //icon加载成功后判断片大小是否真实
 function ifIcon(th) {
-	preloadImage(th.src,th);
+	//preloadImage(th.src,th);
 };
 
 
