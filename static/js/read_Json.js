@@ -42,6 +42,7 @@ function preloadImage(url,th) {
 		ByteKb = retain(data.size/1024,4);
 		//console.log("icon大小KB:"+ByteKb);
 		if (ByteKb === 0.6123){
+			console.log(th.alt+"网站的图标异常执行本地icon顶替");
 			th.src = getFloorIcon();
 			return ;
 		}
@@ -73,7 +74,7 @@ $(document).ready(function() {
 					for (var j=0;j<str.length;j++){
 						var iconurl = 'https://www.favicon.vip/get.php?url='+str[j]["url"];
 						strHtml = strHtml + '<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="'+ str[j]["url"]+'" target="_blank">'
-						strHtml = strHtml + '<img class="icon" src="'+iconurl+'" onerror="geticon(this)"  onload="ifIcon(this)" />';
+						strHtml = strHtml + '<img class="icon" alt="'+str[j]["name"]+'" src="'+iconurl+'" onerror="geticon(this)"  onload="ifIcon(this)" />';
 						strHtml = strHtml + '<span>'+str[j]["name"]+'</span></a></li>';
 					};
 					ulTag.eq(i).children('li:not(:first)' ).remove();
