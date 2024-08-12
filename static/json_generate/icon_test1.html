@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试</title>
+		<script type="text/javascript" src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			/* 页面字体样式 */
+			body, td, input, textarea {
+				font-family:Arial;
+				font-size:12px;
+			}
+		</style>
+		<script type="text/javascript" >
+			//var url = '';
+			//alert(url);
+			$(document).ready(function(){
+				$("button").click(function(){
+					//alert($("#ur").val());
+					//var url = "http://www.google.com/s2/favicons?domain="+$("#ur").val();
+					//alert(url);
+					//$("#img").html('<img alt="Smiley face" width="42" height="42" src='+url+'/>');
+					//var url = $("#ur").val()+"/favicon.ico";
+					//$("#img").html('<img alt="Smiley face" width="42" height="42" src="'+url+'"/>');
+				});
+			});
+			
+			/* $.get('https://v.qq.com',"html",function(res){
+			   alert(res);
+			   $("#source").text(res);
+			});*/
+			
+		</script>
+		<textarea rows="10" cols="80" id="source"></textarea>
+		<input id="ur" value="https://v.qq.com" />
+		<button>ok</button>
+		<div id="img">
+
+		</div>
+		<a href="http://www.baidu.com">百度</a>
+  		<a href="http://www.sogou.com">搜狗</a>
+  		<a href="http://www.zhihu.com">知乎</a>
+		<a href="https://v.qq.com">腾讯</a>
+		<a href="https://www.twitter.com/">推特</a>
+		<script>
+			$("a").each(function(e){
+				$(this).html("<img class='test1' alt='Smiley face' width='42' height='42' src='"+this.href+"/favicon.ico'/>");
+				$(this).prepend("<img class='test2' alt='Smiley face' width='42' height='42' src='https://ico.hnysnet.com/get.php?url="+this.href+"' />");
+				$(this).prepend("<img class='test3' alt='Smiley face' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url="+this.href+"' />");
+				//$(this).prepend("<img class='test2' src='https://f.ydr.me/?url="+this.href+"' />");
+				//$(this).prepend("<img class='test3' src='https://api.ccswust.org/ico/get.php?url="+this.href+"' />");
+				$(this).prepend("<img class='test5' alt='Smiley face' width='42' height='42' src='https://api.xinac.net/icon/?url="+this.href+"' />");
+				//$(this).prepend("<img class='test6' alt='Smiley face' width='42' height='42' src='https://f.ydr.me/"+this.href+"' />");
+				//$(this).prepend("<img class='test7' alt='Smiley face' width='42' height='42' src='https://api.byi.pw/favicon/?url="+this.href+"' />");
+				//$(this).prepend("<img class='test8' alt='Smiley face' width='42' height='42' src='https://favicon.link/"+this.href+"' />");
+				//$(this).prepend("<img class='test9' alt='Smiley face' width='42' height='42' src='https://favicon.yandex.net/favicon/"+this.href+"' />");
+				//$(this).prepend("<img class='test10' alt='Smiley face' width='42' height='42' src='http://favicon.cccyun.cc/"+this.href+"' />");
+				//$(this).prepend("<img class='test11' alt='Smiley face' width='42' height='42' src='https://statics.dnspod.cn/proxy_favicon/_/favicon?domain="+this.href+"' />");
+			});
+		</script>
+	</body>
+</html>
