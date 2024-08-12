@@ -11,6 +11,6 @@ html+css+js
 
 #### 使用说明
 修改json文件（hello/static/json/data.json文件）就能修改导航页内容。
-
+static/json_generate文件有个简单的json文件生成方法
 #### 参与贡献
 基于[https://github.com/5iux](https://github.com/5iux/5iux.github.io)改。
