@@ -3,8 +3,8 @@ pages:
   script:
     - mkdir .
     - cp -r ./* .
-    - rm -rf public
-    - mv .public public
+    - rm -rf /
+    - mv ./ public
   artifacts:
     paths:
       - public
