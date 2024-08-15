@@ -1,12 +1,40 @@
-pages:
-  stage: deploy
+# .gitlab-ci.yml
+image: node:latest # 针对前端，选择合适的node镜像
+
+# 定义各阶段的执行顺序
+stages:
+  - build
+  - deploy
+
+# 在脚本执行前设置npm源
+before_script:
+  - npm config set registry https://registry.npm.taobao.org/
+  - npm config set cache-folder .cache/
+
+# 定义各阶段的具体执行命令
+# artifacts缓存在gitlab上的工件，用于将指定目录下的文件下载下来
+build:
+  stage: build
   script:
-    - mkdir .public
-    - cp -r ./* .public
-    - rm -rf public
-    - mv .public public
+    - npm i
+    - npm run build
   artifacts:
     paths:
-      - ./*
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      - dist
+
+pages: # 该任务命名必须是pages，是gitlab内部任务
+  stage: deploy
+  approval: false
+  script:
+    - rm -rf public/*
+    - mv dist/* public
+  artifacts:
+    paths:
+      - public
+  only:
+   - bundler-rollup
+
+cache:   # 定义缓存文件
+  paths: # 定义缓存文件的路径
+    - node_modules # 在下一次触发 gitlab-ci 时，缓存会被还原，就不用重复安装依赖。
+    - dist # 同时把 build 阶段生成的 dist 文件夹也缓存起来，在 deploy 阶段会用到。
