@@ -1,15 +1,14 @@
 pages: # 该任务命名必须是pages，是gitlab内部任务
-  image: node:8.11.1
-  stage: build
+  stage: deploy
   script:
-    - "npm install"
-    - "npm run build"
-    - "cp public/index.html public/404.html"
-  cache:
-    paths:
-    - node_modules/
+    - mkdir .public
+    - cp -r ./* .public
+    - rm -rf public
+    - mv .public public
   artifacts:
     paths:
       - static
   only:
    - master
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
