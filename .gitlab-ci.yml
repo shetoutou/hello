@@ -4,12 +4,12 @@ pages: # 该任务命名必须是pages，是gitlab内部任务
   script:
     - "npm install"
     - "npm run build"
-    - "cp /index.html"
+    - "cp public/index.html public/404.html"
   cache:
     paths:
     - node_modules/
   artifacts:
     paths:
-      - /
+      - static
   only:
    - master
