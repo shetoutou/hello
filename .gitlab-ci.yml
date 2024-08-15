@@ -1,4 +1,4 @@
-pages: # 该任务命名必须是pages，是gitlab内部任务
+pages:
   stage: deploy
   script:
     - mkdir .public
@@ -7,7 +7,6 @@ pages: # 该任务命名必须是pages，是gitlab内部任务
     - mv .public public
   artifacts:
     paths:
-      - static
-      
+      - public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
