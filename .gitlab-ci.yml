@@ -1,11 +1,13 @@
-# .gitlab-ci.yml
-image: node:latest # 针对前端，选择合适的node镜像
-
 pages: # 该任务命名必须是pages，是gitlab内部任务
+  image: node:8.11.1
   stage: build
   script:
-    - rm -rf public/*
-    - mv dist/* public
+    - "npm install"
+    - "npm run build"
+    - "cp /index.html"
+  cache:
+    paths:
+    - node_modules/
   artifacts:
     paths:
       - /
