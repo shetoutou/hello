@@ -8,6 +8,6 @@ pages: # 该任务命名必须是pages，是gitlab内部任务
     - mv dist/* public
   artifacts:
     paths:
-      - public
+      - ./
   only:
    - master
