@@ -5,26 +5,154 @@
 		<title>测试</title>
 		<script type="text/javascript" src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
 	</head>
-	<body>
+	<body style="margin: 0%;">
 		<style type="text/css">
-			/* 页面字体样式 */
+			/* 页面样式 */
 			body, td, input, textarea {
 				font-family:Arial;
 				font-size:12px;
 			}
+			textarea{
+				 rows:5;
+				 cols:50;
+			}
+			.input-box {
+				position:relative;
+				background:linear-gradient(#99fff1,#99fff1,#ffffff);
+				margin: 0px 0px 0px 0px;
+				padding: 10px 0px 50px 10px;
+			}
+			.input-box>div{
+				display: inline-block;
+			}
+			.input-box>div>textarea{
+				margin-right:10px;
+			}
+			.button-sub {
+				position:absolute;
+				width: 100px;
+				height: 40px;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-left: 20px;
+			}
+			#icon-box{
+				display: none;
+				background:linear-gradient(#ffffff,#99fff1,#ffffff);
+				margin: 0px 0px 0px 0px;
+				padding: 10px 0px 50px 10px;
+			}
+			ul{
+				list-style-type: none;
+				display: block;
+			}
+			ul>span{
+				width: 500px;
+				vertical-align: middle;
+				margin-right: 20px;
+			}
+			
+			ul>li{
+				vertical-align: middle;
+				list-style-type: none;
+				display: inline-block;
+				margin-right: 20px;
+			}
+			.icon-img{
+				width: 32px;
+				height: 32px;
+			}
 		</style>
 		<script type="text/javascript" >
-			//var url = '';
-			//alert(url);
+			//删除空格换行符；
+			function deleteSpace(str){
+				str = str.replace(/\ +/g,"");//删除空格
+				str = str.replace(/[ ]/g,"");//删除空格
+				str = str.replace(/[	]/g,"");//删除空格
+				str = str.replace(/[\r\n]/g,"");//删除换行
+				str = str.replace(/，/g,",");//替换中文逗号为英文都好，用于切割
+				if(str.endsWith(",")) str = str.substring(0, str.length - 1);
+				return str ;
+			}
+			//去除 http:// 和 https://;
+			function deleteHttp(str){
+				return str ;
+			}
+			
+			//错误的图标；
+			function errorIcon(th){
+				console.error("错误的地址:"+th.src);
+				var html = 'data:image/png;base64,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';
+				//html = th.src + "?refresh=true";
+				th.src = html;
+			}
+			
 			$(document).ready(function(){
-				$("button").click(function(){
-					//alert($("#ur").val());
+				$("#button").click(function(){
+					var apiUrl = $("#iconApi").val(),
+					webUrl = $("#webUrl").val();
+					apiUrl = deleteSpace(apiUrl);
+					webUrl = deleteSpace(webUrl);
+					if(apiUrl == "" || webUrl == "") return ;
+					$("#icon-box").show();
+					var apiArr = apiUrl.split(","),
+					webArr = webUrl.split(",");
+					var iconBox = $("#icon-box").html("");
+					for (var i = 0; i < apiArr.length; i++) {
+						var txt = "第"+(i+1)+"测试接口："+apiArr[i];
+						var api1 = "<ul><li class='api-span-txt ' ><span>"+txt+"</span></li>";
+						// if (apiLength < txt.length) apiLength = txt.length;
+						for (var j = 0; j < webArr.length; j++) {
+							var url= webArr[j] , aUrl = "" , api = apiArr[i] , iconSrc = "";
+							//判断是否包含特殊字符 *和# 
+							if(api.includes("*")){
+								//去除要获取的网站地址前的https://或者http://
+								aUrl = url.replace(/^https?:\/\//, '');
+								//直接替换接口里面的特殊字符 “*” 为网站域名
+								api = api.replace(/\*/g, aUrl);
+								//替换完成后直接将地址；
+								iconSrc = api;
+							}else if(api.includes("#")){
+								aUrl = url;
+								//直接替换接口里面的特殊字符 “#” 为网站域名
+								api = api.replace(/\#/g, aUrl);
+								iconSrc = api;
+							}else{
+								iconSrc = apiArr[i]+url;
+							}
+							/* //另类判断，判断接口最后一个字符是否有 “=” 符号，如果没有则执行
+							if(api.endsWith("*") ){
+								//去除要获取的网站地址前的https://或者http://
+								aUrl = url.replace(/^https?:\/\//, '');
+								//直接替换接口里面的特殊字符 “*” 为网站域名
+								api = api.replace(/\*\/g, aUrl);
+								//替换完成后直接将地址；
+								iconSrc = api;
+							}else{
+								iconSrc = apiArr[i]+url;
+							}; */
+							
+							api1 = api1 + "<li><a href='"+url+"'><img class='icon-img' onerror='errorIcon(this)' src='"+iconSrc+"'/></a></li>";
+						}
+						iconBox.append(api1 + "</ul>");
+					};
+					var spanArr = $(".api-span-txt");
+					var apiLength = 0;
+					for (var i = 0; i < spanArr.length; i++) {
+						var spanwidth = spanArr[i].offsetWidth;
+						if (apiLength < spanwidth) {
+							apiLength = spanwidth ;
+						};
+					}
+					spanArr.css("width",(apiLength+2));
+					
 					//var url = "http://www.google.com/s2/favicons?domain="+$("#ur").val();
 					//alert(url);
 					//$("#img").html('<img alt="Smiley face" width="42" height="42" src='+url+'/>');
 					//var url = $("#ur").val()+"/favicon.ico";
 					//$("#img").html('<img alt="Smiley face" width="42" height="42" src="'+url+'"/>');
 				});
+				
 			});
 			
 			/* $.get('https://v.qq.com',"html",function(res){
@@ -33,32 +161,72 @@
 			});*/
 			
 		</script>
-		<textarea rows="10" cols="80" id="source"></textarea>
-		<input id="ur" value="https://v.qq.com" />
-		<button>ok</button>
-		<div id="img">
-
+		<div class="input-box" >
+			<div>
+				<p>接口地址：(“*”代替网站域名，“#”代替有“http://”的网站域名)</p>
+				<textarea rows="10" cols="50" id="iconApi">
+https://www.favicon.vip/get.php?url=,
+https://precious-rose-blackbird.faviconkit.com/*/32,
+https://api.iowen.cn/favicon/*.png,
+https://api.xinac.net/icon/?url=,
+https://api.15777.cn/get.php?url=,
+https://api.uomg.com/api/get.favicon?url=,
+https://tools.ly522.com/ico/favicon.php?url=,
+https://api.qqsuu.cn/api/dm-get?url=,
+http://favicon.cccyun.cc/*,
+https://favicon.yandex.net/favicon/v2/#,
+chrome://favicon/#,
+				</textarea>
+			</div>
+			<div>
+				<p>测试网址：</p>
+				<textarea rows="10" cols="50" id="webUrl">
+http://www.baidu.com,http://www.sogou.com,
+http://www.zhihu.com,https://v.qq.com,
+https://www.twitter.com/,https://iptvindex.com/,
+https://www.ffq.la/,https://tool.liumingye.cn/music/,
+http://www.shetoutou.cn/,http://web.shetoutou.cn/,
+				</textarea>
+			</div>
+			<div>
+				<button id="button" class="button-sub" >测试</button>
+			</div>
 		</div>
-		<a href="http://www.baidu.com">百度</a>
+		<div id="icon-box" >
+			<!-- <ul>
+				
+				<li><img class='test1' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url=http://www.baidu.com'/></li>
+				<li><img class='test1' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url=http://www.baidu.com'/></li>
+			</ul>
+			<ul>
+				<li><img class='test1' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url=http://www.baidu.com'/></li>
+				<li><img class='test1' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url=http://www.baidu.com'/></li>
+			</ul> -->
+		</div>
+		<!-- <a href="http://www.baidu.com">百度</a>
   		<a href="http://www.sogou.com">搜狗</a>
   		<a href="http://www.zhihu.com">知乎</a>
 		<a href="https://v.qq.com">腾讯</a>
 		<a href="https://www.twitter.com/">推特</a>
+		<a href="https://iptvindex.com/">IPTV</a>
+		<a href="https://www.ffq.la/">翻翻</a> -->
+		
 		<script>
-			$("a").each(function(e){
+			/* $("a").each(function(e){
 				$(this).html("<img class='test1' alt='Smiley face' width='42' height='42' src='"+this.href+"/favicon.ico'/>");
 				$(this).prepend("<img class='test2' alt='Smiley face' width='42' height='42' src='https://ico.hnysnet.com/get.php?url="+this.href+"' />");
 				$(this).prepend("<img class='test3' alt='Smiley face' width='42' height='42' src='https://api.yxt521.com/favicon/get.php?url="+this.href+"' />");
 				//$(this).prepend("<img class='test2' src='https://f.ydr.me/?url="+this.href+"' />");
 				//$(this).prepend("<img class='test3' src='https://api.ccswust.org/ico/get.php?url="+this.href+"' />");
 				$(this).prepend("<img class='test5' alt='Smiley face' width='42' height='42' src='https://api.xinac.net/icon/?url="+this.href+"' />");
+				
 				//$(this).prepend("<img class='test6' alt='Smiley face' width='42' height='42' src='https://f.ydr.me/"+this.href+"' />");
 				//$(this).prepend("<img class='test7' alt='Smiley face' width='42' height='42' src='https://api.byi.pw/favicon/?url="+this.href+"' />");
 				//$(this).prepend("<img class='test8' alt='Smiley face' width='42' height='42' src='https://favicon.link/"+this.href+"' />");
 				//$(this).prepend("<img class='test9' alt='Smiley face' width='42' height='42' src='https://favicon.yandex.net/favicon/"+this.href+"' />");
 				//$(this).prepend("<img class='test10' alt='Smiley face' width='42' height='42' src='http://favicon.cccyun.cc/"+this.href+"' />");
 				//$(this).prepend("<img class='test11' alt='Smiley face' width='42' height='42' src='https://statics.dnspod.cn/proxy_favicon/_/favicon?domain="+this.href+"' />");
-			});
+			}); */
 		</script>
 	</body>
 </html>
