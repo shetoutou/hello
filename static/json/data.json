@@ -120,6 +120,9 @@
 	}, {
 		"name": "GitHub",
 		"url": "https://github.com/"
+	}, {
+		"name": "GitLab",
+		"url": "https://gitlab.com/"
 	}]
 }, {
 	"name": "社交邮箱",
