@@ -126,14 +126,20 @@ img.icon { width: 14px; height: 14px; margin: 0 5px 0 8px; vertical-align: -0.15
 @media (max-width: 1800px) {
 	#Jenny {
 		display: none;
+        width: 300px;
+        height: 400px;
 	}
 }
-
+@media (max-width: 1200px) {
+	#Jenny {
+		display: none;
+        width: 150px;
+        height: 200px;
+	}
+}
 #Jenny {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	z-index: 9999;
-	width: 300px;
-	height: 400px;
+	z-index: 9999;	
 }
