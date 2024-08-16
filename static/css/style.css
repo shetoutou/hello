@@ -130,6 +130,7 @@ img.icon { width: 14px; height: 14px; margin: 0 5px 0 8px; vertical-align: -0.15
         height: 400px;
 	}
 }
+<<<<<<< HEAD
 @media (min-width: 1800px) {
 	#Jenny {
         width: 300px;
@@ -138,6 +139,11 @@ img.icon { width: 14px; height: 14px; margin: 0 5px 0 8px; vertical-align: -0.15
 }
 @media (min-width: 1200px) {
 	#Jenny {
+=======
+@media (max-width: 1200px) {
+	#Jenny {
+		display: none;
+>>>>>>> 384461459c212a1f9c00db607c454460d64bfed8
         width: 150px;
         height: 200px;
 	}
