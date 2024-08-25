@@ -500,25 +500,25 @@ img.icon {
 	background: #ddd;
 }
 
-@media (max-width: 1800px) {
+/* @media (max-width: 1800px) {
 	#Jenny {
 		display: none;
 	}
-}
+} */
 
-#topbar-top {
-	position: absolute;
-	z-index: 10;
-	top: 0.5%;
-}
-
-#Jenny {
+/* #Jenny {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	z-index: 10;
 	width: 300px;
 	height: 400px;
+} */
+
+#topbar-top {
+	position: absolute;
+	z-index: 10;
+	top: 0.5%;
 }
 
 #perticle {
