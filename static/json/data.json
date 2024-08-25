@@ -63,7 +63,10 @@
     	},{
 	        "name":"荐片",
 	        "url":"https://www.jianpianpc.com/"
-    	}]
+    	}],{
+	        "name":"小小影视",
+	        "url":"https://159159.cn/"
+    	}
 	}, {
 		"name": "在线工具",
 		"data": [{
