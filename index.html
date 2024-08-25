@@ -32,8 +32,11 @@
 		<script rel="stylesheet" src="static\js\auto_style.js"></script>
 	</head>
 	<body>
+		<!--鼠标粒子-->
+		<pointer-particles id="perticle"></pointer-particles>
 		<!--视频头部背景-->
 		<div class="banner-video">
+			
 			<!--视频来自阿里云首页，有需要请自行更换-->
 			<!-- <video autoplay loop muted>
 				<source src="https://cdn.jsdelivr.net/gh/5iux/uploads/pic/3840-banner.4" type="video/mp4">
@@ -48,7 +51,8 @@
 			</div>
 		</div>
 		<!--topbar开始-->
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="position: absolute; z-index: 10000;">
+		<nav id="topbar-top">
+		<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="topbar-top"> -->
 			<a class="navbar-brand" href="#">
 				<img src="static\img\logo2.png" height="50" style="margin-left:0;" alt="" />
 			</a>
@@ -77,11 +81,11 @@
 				</ul>
 				<!-- 顶部导航菜单-已隐藏-end -->
 				<!-- 天气情况插件-start 插件已停供 -->
-				<div id="he-plugin-simple" style="z-index: 1000; display: none;"></div>
+				<div id="he-plugin-simple" style="z-index: 10; display: none;"></div>
 			</div>
 		</nav>
 		<!--topbar结束-->
-		<div class="container" style="margin-top: 100px; position: relative; z-index: 100;">
+		<div class="container" style="margin-top: 100px; position: relative; z-index: 10;">
 			<!--搜索开始-->
 			<div id="search" class="s-search">
 				<div id="search-list" class="hide-type-list">
@@ -286,8 +290,10 @@
 			</ul>
 		</div>
 		<!-- 杰尼龟导入 -->
-		<div style="" id="Jenny"><iframe id="JennyIframe" width="100%" height="100%" frameborder="no" scrolling="no"
-				style="overflow:hidden;" src="Jenny.html"></iframe></div>
+		<div style="" id="Jenny">
+			<iframe id="JennyIframe" width="100%" height="100%" frameborder="no" scrolling="no" style="overflow:hidden;"
+				src="Jenny.html"></iframe>
+		</div>
 		<!--版权信息开始-->
 		<p class="mt-5 mb-3 text-muted text-center">©2023 by <a href="#">5iux</a>. SheTouTou revise</p>
 		<!--
@@ -301,5 +307,7 @@
 		<script rel="stylesheet" src="static\js\sou.js"></script>
 		<!-- 导航标签jsons文件读取写入 -->
 		<script type="text/javascript" src="static\js\read_Json.js"></script>
+
+		<script type="text/javascript" src="static/js/particle.js"></script>
 	</body>
 </html>
