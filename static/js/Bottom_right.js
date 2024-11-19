@@ -1,14 +1,15 @@
+// 定义 FkService 对象并添加 fk_upWard 方法
+var FkService = {
+	fk_upWard: function() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+};
+
 //增加右下角浮动菜单
 function addBottomRight() {
-	// 定义 FkService 对象并添加 fk_upWard 方法
-	var FkService = {
-		fk_upWard: function() {
-			window.scrollTo({
-				top: 0,
-				behavior: 'smooth'
-			});
-		}
-	};
 	var tab = document.getElementById('body');
 	var div = '<div class="wapnone dahai"><ul>' +
 		'<li><div class="dahai_consult_cont1" style="display: none;">'+
