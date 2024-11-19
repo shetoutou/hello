@@ -1,7 +1,12 @@
+@media screen and (max-width: 900px) {
+	.dahai {
+		display: none;
+	}
+}
 .dahai {
 	max-height: 232px;
 	position: fixed;
-	right: 30px;
+	right: 15px;
 	top: 65%;
 	/* 垂直位置 */
 	font-size: 14px;
