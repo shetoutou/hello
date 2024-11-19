@@ -3,6 +3,12 @@
 		display: none;
 	}
 }
+
+@media screen and (max-height: 500px) {
+	.dahai {
+		display: none;
+	}
+}
 .dahai {
 	max-height: 232px;
 	position: fixed;
